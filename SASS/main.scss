@@ -2,8 +2,55 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background: url(../images/header_whisky.jpg) center no-repeat;
-    background-size: cover;
+    // background: url(../images/header_whisky.jpg) center no-repeat;
+    // background-size: cover;
+    background-color: rgba($color: #000000, $alpha: .5);
+    &::before{
+        content: ' ';
+        background: url(../images/hero-car.jpg) center center / cover no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__left{
+        width: 200px;
+    }
+
+    &__right{
+        width: 500px;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10%;
+        align-items: center;
+        height: 150px;
+    }
+
+    &__nav{
+        &__list{
+        display: flex;
+        justify-content: flex-end;
+        gap: 50px;
+        justify-items: center;
+        }
+        &__item{
+            width: 80px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
+    ul,li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 }
 
 .brand {
