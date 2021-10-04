@@ -15,7 +15,7 @@
   .header__left {
     width: 200px; }
   .header__right {
-    width: 500px; }
+    width: 700px; }
   .header__container {
     display: flex;
     justify-content: space-between;
@@ -26,15 +26,35 @@
     display: flex;
     justify-content: flex-end;
     gap: 50px;
-    justify-items: center; }
+    align-items: center;
+    line-height: 2.2; }
   .header__nav__item {
-    width: 80px;
+    width: 125px;
+    height: 50px;
     font-size: 24px;
-    text-align: center; }
+    text-align: center;
+    transition: all .5s; }
+    .header__nav__item:hover {
+      cursor: pointer;
+      background-color: #DEDEDE;
+      border-radius: 3px;
+      color: #333; }
   .header ul, .header li {
     margin: 0;
     padding: 0;
     list-style: none; }
+  .header .arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg) translateY(-4px); }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.shopping-cart {
+  display: none; }
 
 .brand {
   display: flex;
