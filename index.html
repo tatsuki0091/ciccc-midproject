@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="SASS/main.scss" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <title>CSS Final Project Landing Page</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-block">
+            <a href="#" class="logo"><img class="company-logo" src="./images/company_logo.jpg" alt="logo" /></a>
+        </div>
+        <div class="brand">
+            <div class="catch-copy">
+                <h1 class="main-name">Whisky</h1>
+                <p class="sub-name">Best Whisky in the world</p>
+            </div>
+        </div>
+    </header>
+    <section class="description-section">
+        <h1 class="description-heading">Why Us</h1>
+        <p class="description fadein">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+            commodi placeat nihil animi, id dicta, rem recusandae ex earum
+            cupiditate unde eius aliquid dolore voluptatibus delectus hic
+            inventore similique dolores. Veritatis sit dicta et impedit
+            repellendus quo aspernatur, eum vitae quia quos vero natus totam, sint
+            nisi doloribus, quibusdam reiciendis?
+        </p>
+    </section>
+    <section class="contact-form-section">
+        <h1 class="contact-form-heading">Contact Form</h1>
+        <form method="post" action="#" class="contact-form">
+            <div class="container">
+                <div class="nice-wrap">
+                    <input class="nice-textbox" type="text" />
+                    <label class="nice-textLabel" for="Username">Name</label>
+                </div>
+                <div class="nice-wrap">
+                    <input class="nice-emailbox" type="email" />
+                    <label class="nice-emailLabel" for="Email">Email</label>
+                </div>
+                <div class="nice-wrap">
+                    <textarea class="nice-textareabox"></textarea>
+                    <label class="nice-textareaLabel" for="Message">Message</label>
+                </div>
+                <div class="nice-wrap">
+                    <input class="btn-simple" type="submit" value="Send">
+                </div>
+            </div>
+        </form>
+    </section>
+    <section class="link-button">
+        <div class="nice-wrap">
+            <a href="#" class="btn-gradient-3d">BUTTON</a>
+        </div>
+    </section>
+    <footer class="footer-copyright">
+        <p class="footer-copyright-paragraph">
+            &copy; This is Fake LP
+        </p>
+    </footer>
+</body>
+
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.nice-textbox').blur(function() {
+            if ($(this).val().length === 0) {
+                $('.nice-label').removeClass("focus");
+            } else { returns; }
+        })
+        .focus(function() {
+            $('.nice-textLabel').addClass("focus")
+        });
+    $('.nice-emailbox').blur(function() {
+            if ($(this).val().length === 0) {
+                $('.nice-label').removeClass("focus");
+            } else { returns; }
+        })
+        .focus(function() {
+            $('.nice-emailLabel').addClass("focus")
+        });
+    $('.nice-textareabox').blur(function() {
+            if ($(this).val().length === 0) {
+                $('.nice-label').removeClass("focus");
+            } else { returns; }
+        })
+        .focus(function() {
+            $('.nice-textareaLabel').addClass("focus")
+        });
+});
+$(window).scroll(function (){
+        $('.fadein').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight + 200){
+                $(this).addClass('scrollin');
+            }
+        });
+    });
+</script>
