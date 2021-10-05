@@ -4,7 +4,7 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.5); }
   .header::before {
-    content: ' ';
+    content: " ";
     background: url(../images/hero-car.jpg) center center/cover no-repeat;
     width: 100%;
     height: 100%;
@@ -33,13 +33,14 @@
     height: 50px;
     font-size: 24px;
     text-align: center;
-    transition: all .5s; }
+    transition: all 0.5s; }
     .header__nav__item:hover {
       cursor: pointer;
-      background-color: #DEDEDE;
+      background-color: #dedede;
       border-radius: 3px;
       color: #333; }
-  .header ul, .header li {
+  .header ul,
+  .header li {
     margin: 0;
     padding: 0;
     list-style: none; }
@@ -54,7 +55,94 @@
   text-transform: uppercase; }
 
 .shopping-cart {
-  display: none; }
+  background-color: skyblue;
+  max-width: 50vw;
+  margin: 0 10% 0 auto;
+  padding: 5px 15px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 100; }
+  .shopping-cart .product .product-price:before,
+  .shopping-cart .product .product-line-price:before,
+  .shopping-cart .totals-value:before {
+    content: "$"; }
+  .shopping-cart .collumn-labels {
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333; }
+    .shopping-cart .collumn-labels .product-image,
+    .shopping-cart .collumn-labels .product-details,
+    .shopping-cart .collumn-labels .product-removal {
+      text-indent: -9999px; }
+  .shopping-cart .product {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    display: flex; }
+    .shopping-cart .product .product-image {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .shopping-cart .product-image {
+      float: left;
+      width: 20%; }
+    .shopping-cart .product-details {
+      float: left;
+      width: 37%; }
+    .shopping-cart .product-price {
+      float: left;
+      width: 12%; }
+    .shopping-cart .product-quantity {
+      float: left;
+      width: 10%; }
+    .shopping-cart .product-removal {
+      float: left;
+      width: 9%; }
+    .shopping-cart .product-line-price {
+      float: left;
+      width: 12%;
+      text-align: right; }
+    .shopping-cart .product-image {
+      text-align: center; }
+      .shopping-cart .product-image img {
+        width: 100px; }
+    .shopping-cart .product-details .product-title {
+      margin-right: 20px; }
+    .shopping-cart .product-details .product-description {
+      margin: 5px 20px 5px 0;
+      line-height: 1.4em; }
+    .shopping-cart .product-quantity input {
+      width: 40px; }
+  .shopping-cart .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px; }
+    .shopping-cart .remove-product:hover {
+      background-color: #a44; }
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 auto;
+  max-width: 30%; }
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px; }
+  .totals > label {
+    float: left;
+    clear: both;
+    width: 70%;
+    text-align: right; }
+  .totals-value {
+    float: right;
+    width: 30%;
+    text-align: right; }
 
 .brand {
   display: flex;
@@ -62,7 +150,8 @@
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 50; }
 
 .company-logo {
   width: 80px;
@@ -208,8 +297,8 @@ textarea {
 
 .btn-simple {
   margin-top: 15%;
-  border-color: #FFA500;
-  color: #FFA500;
+  border-color: #ffa500;
+  color: #ffa500;
   width: 100%;
   padding: 2%;
   background-color: transparent;
@@ -217,7 +306,7 @@ textarea {
   font-size: 40px; }
 
 .btn-simple:hover {
-  background: #FFA500;
+  background: #ffa500;
   color: black; }
 
 .btn-gradient-3d {
@@ -228,10 +317,10 @@ textarea {
   font-weight: bold;
   border-radius: 4px;
   color: black;
-  text-shadow: 1px 1px 1px #FFA500;
-  background-color: #FFA500;
+  text-shadow: 1px 1px 1px #ffa500;
+  background-color: #ffa500;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #FFA500;
+  border-bottom: solid 3px #ffa500;
   text-align: center;
   font-size: 30px; }
 
@@ -270,15 +359,15 @@ footer {
     font-size: 25px; }
   .btn-simple {
     margin-top: 35%;
-    border-color: #FFA500;
-    color: #FFA500;
+    border-color: #ffa500;
+    color: #ffa500;
     width: 100%;
     padding: 2%;
     background-color: transparent;
     width: 100%;
     font-size: 40px; }
   .btn-simple:hover {
-    background: #FFA500;
+    background: #ffa500;
     color: black; }
   .btn-gradient-3d {
     margin-top: 20%;
@@ -289,10 +378,10 @@ footer {
     font-weight: bold;
     border-radius: 4px;
     color: black;
-    text-shadow: 1px 1px 1px #FFA500;
-    background-color: #FFA500;
+    text-shadow: 1px 1px 1px #ffa500;
+    background-color: #ffa500;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-    border-bottom: solid 3px #FFA500;
+    border-bottom: solid 3px #ffa500;
     text-align: center;
     font-size: 30px; }
   .contact-form-heading {
