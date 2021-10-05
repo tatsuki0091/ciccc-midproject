@@ -33,6 +33,45 @@ $(document).ready(function() {
         cartItems.push({'price': price, 'color': color})
         console.log(cartItems)
     });
+
+    const carA = {
+        price: 300,
+        color: 'black',
+    }
+    const carB = {
+        price: 500,
+        color: 'red',
+    }
+    const carC = {
+        price: 600,
+        color: 'white',
+    }
+
+
+    cartItems.push(carA,carB,carC);
+    console.log(cartItems);
+
+    // cartItems.forEach(function(){
+    //     console.log(price);
+    // })
+
+    $(cartItems).each(function(){
+        const productPrice = this.price;
+        const productColor = this.color;
+        console.log(productPrice);
+        console.log(productColor);
+
+        
+    })
+
+    const subTotal = Number($('#cart-subtotal').text());
+    const tax = Number($('#cart-tax').text());
+    const shipping = Number($('#cart-shipping').text());
+    const grandTotal = Number($('#cart-total').text());
+    // console.log(subTotal);
+    // console.log(tax);
+    // console.log(shipping);
+    // console.log(grandTotal);
 });
 $(window).scroll(function() {
     $('.fadein').each(function() {
