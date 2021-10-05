@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    // "compile:sass": "node-sass SASS/main.scss css/main.css -w",
-    // "gulp": "gulp"
+    "compile:sass": "node-sass SASS/main.scss css/main.css -w"
   },
   "keywords": [],
   "author": "",
