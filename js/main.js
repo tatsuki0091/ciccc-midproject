@@ -28,10 +28,11 @@ $(document).ready(function() {
         });
 
     $('.purchase-button').on('click', function() {
-        let price = $(this).parent().parent().find('.price').text()
+        let priceText = $(this).parent().parent().find('.price').text()
+        let price =priceText.replace("Price: $", "");
         let color = $(this).parent().parent().find('[name=color] option:selected').val()
-        cartItems.push({'price': price, 'color': color})
-        console.log(cartItems)
+        let img = $(this).parent().parent().find('.car-img').attr('src')
+        cartItems.push({'price': price, 'color': color, 'img': img})
     });
 
     const carA = {
