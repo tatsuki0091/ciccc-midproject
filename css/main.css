@@ -189,19 +189,14 @@
       justify-content: center;
       align-items: center; }
     .shopping-cart .product-image {
-      float: left;
       width: 20%; }
     .shopping-cart .product-details {
-      float: left;
       width: 37%; }
     .shopping-cart .product-price {
-      float: left;
       width: 12%; }
     .shopping-cart .product-color {
-      float: left;
       width: 10%; }
     .shopping-cart .product-removal {
-      float: left;
       width: 10%;
       text-align: center; }
     .shopping-cart .product-line-price {
@@ -241,11 +236,6 @@
     margin-bottom: 10px; }
     .totals-item > label {
       padding-left: 40px; }
-  .totals > label {
-    float: left;
-    clear: both;
-    width: 70%;
-    text-align: right; }
   .totals-value {
     float: right;
     width: 30%;

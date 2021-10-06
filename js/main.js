@@ -71,9 +71,7 @@ $(document).ready(function () {
 
     $(".product").each(function () {
       const removeComma = Number($(this.children[4]).text().replace(",", ""));
-      // console.log(Number($(this.children[4]).text()));
       subTotal += removeComma;
-      console.log(subTotal);
     });
 
     let tax = subTotal * TAXRATE;
@@ -109,9 +107,8 @@ $(document).ready(function () {
 
       const newProduct = document.createElement("div");
       newProduct.setAttribute("class", "product");
-      newProduct.setAttribute("id", "product");
 
-      newProduct.innerHTML = `<div class="product-image" id="product-image"><img src="${productImg}" alt=""></div>    <div class="product-details" id="product-details"><div class="product-title">Car Name</div><p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem perferendis aperiam facilis illum illo! Eveniet!</p></div><div class="product-color" id="product-color"><select name="color" id="color"><option value="black">Black</option><option value="red">Red</option><option value="Blue">Blue</option></select></div><div class="product-removal" id="product-removal"><button class="remove-product btn">Remove</button></div><div class="product-line-price" id="product-line-price">${productPrice}</div>`;
+      newProduct.innerHTML = `<div class="product-image"><img src="${productImg}" alt=""></div><div class="product-details" ><div class="product-title">Car Name</div><p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem perferendis aperiam facilis illum illo! Eveniet!</p></div><div class="product-color"><select name="color"><option value="black">Black</option><option value="red">Red</option><option value="Blue">Blue</option></select></div><div class="product-removal" ><button class="remove-product btn">Remove</button></div><div class="product-line-price">${productPrice}</div>`;
 
       const newProductColor = newProduct
         .getElementsByTagName("select")
@@ -128,17 +125,20 @@ $(document).ready(function () {
       productList.appendChild(newProduct);
 
       cartItems.pop();
+
+      calculateCart();
     });
   });
 
   $("#cart").on("click", function () {
-    $(".product-removal button").click(function () {
-      removeItem(this);
-    });
-
     calculateCart();
 
     cartItems = [];
+  });
+
+  $(document).on("click", ".remove-product", function () {
+    console.log("clicked");
+    removeItem(this);
   });
 
   const removeItem = function (removeButton) {
@@ -149,7 +149,7 @@ $(document).ready(function () {
     calculateCart();
   };
 
-  // End Shopping Cart
+  // End Shopping Cart Section
 });
 $(window).scroll(function () {
   $(".fadein").each(function () {
