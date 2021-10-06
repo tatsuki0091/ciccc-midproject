@@ -208,6 +208,8 @@
   right: 0;
   z-index: 100;
 
+  
+
   .product .product-price:before,
   .product .product-line-price:before,
   .totals-value:before {
@@ -296,13 +298,40 @@
       background-color: #a44;
     }
   }
+  &__bottoms {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & .buttons{
+    margin-left: 50px;
+;
+
+    & .clear{
+      margin-right: 30px;
+    }
+    > button{
+      width: 100px;
+      height: 40px;
+      background-color: #FFC801;
+      border: 1px solid #FFC801;
+      font-size: 16px;
+
+      &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
 }
 
 .totals {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 auto;
-  max-width: 40%;
+  // margin: 0 0 0 auto;
+  min-width: 40%;
 
   &-item {
     float: right;

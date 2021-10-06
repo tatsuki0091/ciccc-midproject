@@ -223,12 +223,29 @@
     border-radius: 3px; }
     .shopping-cart .remove-product:hover {
       background-color: #a44; }
+  .shopping-cart__bottoms {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .shopping-cart .buttons {
+    margin-left: 50px; }
+    .shopping-cart .buttons .clear {
+      margin-right: 30px; }
+    .shopping-cart .buttons > button {
+      width: 100px;
+      height: 40px;
+      background-color: #FFC801;
+      border: 1px solid #FFC801;
+      font-size: 16px; }
+      .shopping-cart .buttons > button:hover {
+        cursor: pointer;
+        opacity: 0.8; }
 
 .totals {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 auto;
-  max-width: 40%; }
+  min-width: 40%; }
   .totals-item {
     float: right;
     clear: both;

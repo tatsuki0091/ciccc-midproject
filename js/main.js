@@ -149,6 +149,17 @@ $(document).ready(function () {
     calculateCart();
   };
 
+  // Clear & Purchase item
+
+  $(".remove-all").on("click", function () {
+    console.log("clicked");
+    const productList = document.querySelector(".product-list");
+    while (productList.firstChild) {
+      productList.removeChild(productList.firstChild);
+    }
+    calculateCart();
+  });
+
   // End Shopping Cart Section
 });
 $(window).scroll(function () {
