@@ -52,6 +52,10 @@ $(document).ready(function () {
   const cartButton = document.querySelector("#cart");
   const shoppingCart = document.querySelector(".shopping-cart");
   const arrow = document.querySelector(".arrow");
+  const itemNum = document.querySelector(".item-num");
+
+  let itemCount = 0;
+
   cartButton.addEventListener("click", function () {
     shoppingCart.classList.toggle("hidden");
     cartButton.classList.toggle("opened");
@@ -127,7 +131,10 @@ $(document).ready(function () {
       cartItems.pop();
 
       calculateCart();
+
+      itemCount++;
     });
+    indicateItemNum(itemCount);
   });
 
   $("#cart").on("click", function () {
@@ -137,31 +144,48 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".remove-product", function () {
-    console.log("clicked");
     removeItem(this);
+    indicateItemNum(itemCount);
   });
 
   const removeItem = function (removeButton) {
-    console.log("clicked");
     let prdocutRow = $(removeButton).parent().parent();
-    console.log(prdocutRow);
     prdocutRow.remove();
     calculateCart();
+    itemCount--;
   };
 
   // Clear & Purchase item
 
-  $(".remove-all").on("click", function () {
-    console.log("clicked");
+  $(".remove-all").on("click", function (e) {
     const productList = document.querySelector(".product-list");
+    const clearBtn = document.querySelector(".clear");
+    const purchaseBtn = document.querySelector(".purchase");
+
+    if (e.target == clearBtn && productList.children.length > 0) {
+      alert("Cleared all item in the cart");
+    } else if (e.target == purchaseBtn && productList.children.length > 0) {
+      alert("Confirmed your order");
+    }
     while (productList.firstChild) {
       productList.removeChild(productList.firstChild);
     }
     calculateCart();
+    itemCount = 0;
+    indicateItemNum(itemCount);
   });
+
+  const indicateItemNum = function (itemCount) {
+    if (itemCount == 0) {
+      itemNum.textContent = "";
+    } else if (itemCount > 0) {
+      itemNum.textContent = `(${itemCount})`;
+    }
+  };
 
   // End Shopping Cart Section
 });
+
 $(window).scroll(function () {
   $(".fadein").each(function () {
     var elemPos = $(this).offset().top;
