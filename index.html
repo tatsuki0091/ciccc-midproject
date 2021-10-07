@@ -1,113 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="SASS/main.scss" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
-    <title>CSS Final Project Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <title>CICCC Mid term project</title>
     <script src="js/jquery-3.6.0.min.js"></script>
-</head>
+    <script src="js/main.js"></script>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="logo-block">
+      <div class="header__container">
+        <div class="header__left">
+          <h1 class="header__title text-uppercase">car store</h1>
+        </div>
+        <div class="header__right">
+          <nav class="header__nav">
+            <ul class="header__nav__list">
+              <li class="header__nav__item text-uppercase">home</li>
+              <li class="header__nav__item text-uppercase">shop</li>
+              <li class="header__nav__item text-uppercase">contact</li>
+              <li class="header__nav__item text-uppercase cart" id="cart">
+                cart <span class="item-num"></span> <i class="arrow arrow-down"></i>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- <div class="logo-block">
             <a href="#" class="logo"><img class="company-logo" src="./images/company_logo.jpg" alt="logo" /></a>
+        </div> -->
+      <div class="brand">
+        <div class="catch-copy">
+          <h1 class="main-name text-uppercase">Journey</h1>
+          <p class="sub-name">Find the Best Place in the World</p>
         </div>
-        <div class="brand">
-            <div class="catch-copy">
-                <h1 class="main-name">Whisky</h1>
-                <p class="sub-name">Best Whisky in the world</p>
+      </div>
+
+      <!-- Shopping cart -->
+      <div class="shopping-cart hidden">
+        <h1>shopping cart</h1>
+
+        <div class="shopping-cart__container">
+          <div class="collumn-labels">
+            <label class="product-image">Image</label>
+            <label class="product-details">Product</label>
+            <label class="product-color">Color</label>
+            <label class="product-removal">Remove</label>
+            <label class="product-line-price">Price</label>
+          </div>
+
+          <div class="product-list" id="product-list">
+            
+          </div>
+
+          <div class="shopping-cart__bottoms">
+            <div class="buttons">
+              <button class="clear remove-all">All Clear</button>
+              <button class="purchase remove-all">Purchase</button>
             </div>
+            <div class="totals">
+              <div class="totals-item">
+                <label>Sub total</label>
+                <div class="totals-value" id="cart-subtotal">0.00</div>
+              </div>
+              <div class="totals-item">
+                <label>Tax (10%)</label>
+                <div class="totals-value" id="cart-tax">0.00</div>
+              </div>
+              <div class="totals-item">
+                <label>Shipping</label>
+                <div class="totals-value" id="cart-shipping">0.00</div>
+              </div>
+              <div class="totals-item totals-item-total">
+                <label>Grand Total</label>
+                <div class="totals-value" id="cart-total">0.00</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- End Shopping cart -->
     </header>
     <section class="description-section">
-        <h1 class="description-heading">Why Us</h1>
-        <p class="description fadein">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
-            commodi placeat nihil animi, id dicta, rem recusandae ex earum
-            cupiditate unde eius aliquid dolore voluptatibus delectus hic
-            inventore similique dolores. Veritatis sit dicta et impedit
-            repellendus quo aspernatur, eum vitae quia quos vero natus totam, sint
-            nisi doloribus, quibusdam reiciendis?
-        </p>
+      <h1 class="description-heading">Why Us</h1>
+      <p class="description fadein">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae
+        commodi placeat nihil animi, id dicta, rem recusandae ex earum
+        cupiditate unde eius aliquid dolore voluptatibus delectus hic inventore
+        similique dolores. Veritatis sit dicta et impedit repellendus quo
+        aspernatur, eum vitae quia quos vero natus totam, sint nisi doloribus,
+        quibusdam reiciendis?
+      </p>
+    </section>
+    <section class="product-section">
+      <h1 class="contact-form-heading">Product list</h1>
+      <div class="pricingdiv">
+        <ul id="product1" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/david-leveque-esvWH-owWug-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $15000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+        <ul id="product2" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/joey-banks-YApiWyp0lqo-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $25000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+        <ul id="product3" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/sahil-patel-7KFGoBwMCyI-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $35000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+        <ul id="product4" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/florian-schneider-799KfBloSFQ-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $45000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+        <ul id="product5" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/karol-smoczynski-PlhpEa-WG6E-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $55000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+        <ul id="product6" class="theplan">
+          <li class="title">
+            <img
+              class="car-img"
+              src="images/dhiva-krishna-X16zXcbxU4U-unsplash.jpg"
+            />
+          </li>
+          <li>
+            <b>Color:</b>
+            <select class="color" name="color">
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </li>
+          <li class="price"><b>Price:</b> $65000</li>
+          <li><button class="pricebutton purchase-button">Add Cart</button></li>
+        </ul>
+      </div>
     </section>
     <section class="contact-form-section">
-        <h1 class="contact-form-heading">Contact Form</h1>
-        <form method="post" action="#" class="contact-form">
-            <div class="container">
-                <div class="nice-wrap">
-                    <input class="nice-textbox" type="text" />
-                    <label class="nice-textLabel" for="Username">Name</label>
-                </div>
-                <div class="nice-wrap">
-                    <input class="nice-emailbox" type="email" />
-                    <label class="nice-emailLabel" for="Email">Email</label>
-                </div>
-                <div class="nice-wrap">
-                    <textarea class="nice-textareabox"></textarea>
-                    <label class="nice-textareaLabel" for="Message">Message</label>
-                </div>
-                <div class="nice-wrap">
-                    <input class="btn-simple" type="submit" value="Send">
-                </div>
-            </div>
-        </form>
-    </section>
-    <section class="link-button">
-        <div class="nice-wrap">
-            <a href="#" class="btn-gradient-3d">BUTTON</a>
+      <h1 class="contact-form-heading">Contact Form</h1>
+      <form method="post" action="#" class="contact-form">
+        <div class="container">
+          <div class="nice-wrap">
+            <input class="nice-textbox" type="text" />
+            <label class="nice-textLabel" for="Username">Name</label>
+          </div>
+          <div class="nice-wrap">
+            <input class="nice-emailbox" type="email" />
+            <label class="nice-emailLabel" for="Email">Email</label>
+          </div>
+          <div class="nice-wrap">
+            <textarea class="nice-textareabox"></textarea>
+            <label class="nice-textareaLabel" for="Message">Message</label>
+          </div>
+          <div class="nice-wrap">
+            <input class="btn-simple" type="submit" value="Send" />
+          </div>
         </div>
+      </form>
     </section>
     <footer class="footer-copyright">
-        <p class="footer-copyright-paragraph">
-            &copy; This is Fake LP
-        </p>
+      <p class="footer-copyright-paragraph">&copy; This is Fake</p>
     </footer>
-</body>
-
+  </body>
 </html>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.nice-textbox').blur(function() {
-            if ($(this).val().length === 0) {
-                $('.nice-label').removeClass("focus");
-            } else { returns; }
-        })
-        .focus(function() {
-            $('.nice-textLabel').addClass("focus")
-        });
-    $('.nice-emailbox').blur(function() {
-            if ($(this).val().length === 0) {
-                $('.nice-label').removeClass("focus");
-            } else { returns; }
-        })
-        .focus(function() {
-            $('.nice-emailLabel').addClass("focus")
-        });
-    $('.nice-textareabox').blur(function() {
-            if ($(this).val().length === 0) {
-                $('.nice-label').removeClass("focus");
-            } else { returns; }
-        })
-        .focus(function() {
-            $('.nice-textareaLabel').addClass("focus")
-        });
-});
-$(window).scroll(function (){
-        $('.fadein').each(function(){
-            var elemPos = $(this).offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            if (scroll > elemPos - windowHeight + 200){
-                $(this).addClass('scrollin');
-            }
-        });
-    });
-</script>

@@ -1,9 +1,263 @@
+.pricingdiv {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  justify-content: center;
+  font-family: "Source Sans Pro", Arial, sans-serif; }
+
+.pricingdiv ul.theplan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  width: 260px;
+  /* width of each table */
+  margin-bottom: 1em;
+  border: 1px solid gray;
+  transition: all 0.5s; }
+
+.pricingdiv ul.theplan:hover {
+  /* when mouse hover over pricing table */
+  transform: scale(1.05);
+  transition: all 0.5s;
+  z-index: 100;
+  box-shadow: 0 0 10px gray; }
+
+.pricingdiv ul.theplan .center {
+  margin: 0 auto;
+  text-align: center; }
+
+.pricingdiv ul.theplan img {
+  max-width: 80%;
+  height: 170px; }
+
+.pricingdiv ul.theplan li {
+  padding: 10px 10px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  color: white; }
+
+.pricingdiv ul.theplan li.title {
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.1) inset;
+  text-transform: uppercase; }
+
+.pricingdiv ul.theplan:nth-of-type(2) li.title {
+  color: white; }
+
+.pricingdiv ul.theplan:nth-of-type(3) li.title {
+  color: white; }
+
+.pricingdiv ul.theplan li b {
+  text-transform: uppercase;
+  color: white; }
+
+.pricingdiv ul.theplan li.title b {
+  font-size: 250%; }
+
+.pricingdiv ul.theplan:last-of-type {
+  /* remove right margin in very last table */
+  margin-right: 0; }
+
+/*very last LI within each pricing UL */
+.pricingdiv ul.theplan li:last-of-type {
+  text-align: center;
+  margin-top: auto;
+  /*align last LI (price botton li) to the very bottom of UL */ }
+
+.pricingdiv button.pricebutton {
+  background: red;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px auto;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase; }
+
+@media only screen and (max-width: 600px) {
+  .pricingdiv ul.theplan {
+    border-radius: 0;
+    width: 100%;
+    margin-right: 0; }
+  .pricingdiv ul.theplan:hover {
+    transform: none;
+    box-shadow: none; }
+  .pricingdiv a.pricebutton {
+    display: block; } }
+
 .header {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url(../images/header_whisky.jpg) center no-repeat;
-  background-size: cover; }
+  background-color: rgba(0, 0, 0, 0.5); }
+  .header::before {
+    content: " ";
+    background: url(../images/hero-car.jpg) center center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+  .header__left {
+    width: 200px; }
+  .header__right {
+    width: 700px; }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+    align-items: center;
+    height: 150px; }
+  .header__nav__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    align-items: center;
+    line-height: 2.2; }
+  .header__nav__item {
+    width: 125px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    transition: all 0.5s; }
+    .header__nav__item:hover {
+      cursor: pointer;
+      background-color: #dedede;
+      border-radius: 3px;
+      color: #333; }
+  .header__nav .opened {
+    background-color: #535353;
+    color: white; }
+  .header ul,
+  .header li {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .header .arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg) translateY(-4px); }
+  .header .arrow-up {
+    transform: rotate(225deg) translateY(4px); }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.hidden {
+  display: none; }
+
+.shopping-cart {
+  background-color: #535353;
+  width: 45vw;
+  margin: 0 10% 0 auto;
+  padding: 5px 15px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 100; }
+  .shopping-cart .product .product-price:before,
+  .shopping-cart .product .product-line-price:before,
+  .shopping-cart .totals-value:before {
+    content: "$"; }
+  .shopping-cart .collumn-labels {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: flex-end; }
+    .shopping-cart .collumn-labels .product-image,
+    .shopping-cart .collumn-labels .product-details,
+    .shopping-cart .collumn-labels .product-removal {
+      text-indent: -9999px; }
+  .shopping-cart .product {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: flex-end; }
+    .shopping-cart .product .product-image {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .shopping-cart .product-image {
+      width: 20%; }
+    .shopping-cart .product-details {
+      width: 37%; }
+    .shopping-cart .product-price {
+      width: 12%; }
+    .shopping-cart .product-color {
+      width: 10%; }
+    .shopping-cart .product-removal {
+      width: 10%;
+      text-align: center; }
+    .shopping-cart .product-line-price {
+      padding-right: 10px;
+      width: 11%;
+      text-align: right; }
+    .shopping-cart .product-image {
+      text-align: center; }
+      .shopping-cart .product-image img {
+        width: 100px; }
+    .shopping-cart .product-details .product-title {
+      margin-right: 20px; }
+    .shopping-cart .product-details .product-description {
+      margin: 5px 20px 5px 0;
+      line-height: 1.4em; }
+    .shopping-cart .product-color input {
+      width: 40px; }
+  .shopping-cart .remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px; }
+    .shopping-cart .remove-product:hover {
+      background-color: #a44; }
+  .shopping-cart__bottoms {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .shopping-cart .buttons {
+    margin-left: 50px; }
+    .shopping-cart .buttons .clear {
+      margin-right: 30px; }
+    .shopping-cart .buttons > button {
+      width: 100px;
+      height: 40px;
+      background-color: #FFC801;
+      border: 1px solid #FFC801;
+      font-size: 16px; }
+      .shopping-cart .buttons > button:hover {
+        cursor: pointer;
+        opacity: 0.8; }
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  min-width: 40%; }
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px; }
+    .totals-item > label {
+      padding-left: 40px; }
+  .totals-value {
+    float: right;
+    width: 30%;
+    text-align: right;
+    padding-right: 10px; }
 
 .brand {
   display: flex;
@@ -11,7 +265,8 @@
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 50; }
 
 .company-logo {
   width: 80px;
@@ -157,8 +412,8 @@ textarea {
 
 .btn-simple {
   margin-top: 15%;
-  border-color: #FFA500;
-  color: #FFA500;
+  border-color: #ffa500;
+  color: #ffa500;
   width: 100%;
   padding: 2%;
   background-color: transparent;
@@ -166,7 +421,7 @@ textarea {
   font-size: 40px; }
 
 .btn-simple:hover {
-  background: #FFA500;
+  background: #ffa500;
   color: black; }
 
 .btn-gradient-3d {
@@ -177,10 +432,10 @@ textarea {
   font-weight: bold;
   border-radius: 4px;
   color: black;
-  text-shadow: 1px 1px 1px #FFA500;
-  background-color: #FFA500;
+  text-shadow: 1px 1px 1px #ffa500;
+  background-color: #ffa500;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #FFA500;
+  border-bottom: solid 3px #ffa500;
   text-align: center;
   font-size: 30px; }
 
@@ -219,15 +474,15 @@ footer {
     font-size: 25px; }
   .btn-simple {
     margin-top: 35%;
-    border-color: #FFA500;
-    color: #FFA500;
+    border-color: #ffa500;
+    color: #ffa500;
     width: 100%;
     padding: 2%;
     background-color: transparent;
     width: 100%;
     font-size: 40px; }
   .btn-simple:hover {
-    background: #FFA500;
+    background: #ffa500;
     color: black; }
   .btn-gradient-3d {
     margin-top: 20%;
@@ -238,10 +493,10 @@ footer {
     font-weight: bold;
     border-radius: 4px;
     color: black;
-    text-shadow: 1px 1px 1px #FFA500;
-    background-color: #FFA500;
+    text-shadow: 1px 1px 1px #ffa500;
+    background-color: #ffa500;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-    border-bottom: solid 3px #FFA500;
+    border-bottom: solid 3px #ffa500;
     text-align: center;
     font-size: 30px; }
   .contact-form-heading {
